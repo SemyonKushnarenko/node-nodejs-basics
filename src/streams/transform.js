@@ -1,6 +1,3 @@
-import fs from 'fs'
-import path from 'path'
-import { stdout } from 'process';
 import { Transform, pipeline } from 'stream';
 
 export const transform = async () => {
