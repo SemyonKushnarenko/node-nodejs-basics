@@ -1,3 +1,15 @@
+import fs from 'fs'
+import path from 'path'
+import { stdout } from 'process';
+import { Transform, pipeline } from 'stream';
+
 export const transform = async () => {
-    // Write your code here 
+    const transformReverse = new Transform({
+        transform(chunk, encoding, callback) {
+            callback(null, chunk.reverse() + '\n')
+        }
+    })
+    pipeline(process.stdin, transformReverse, process.stdout, err => {
+        if (err) throw new Error(err.message)
+    })
 };
