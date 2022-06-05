@@ -1,3 +1,3 @@
-import {decompress} from "./src/zip/decompress.js";
+import {performCalculations} from "./src/wt/main.js";
 
-decompress()
+performCalculations()
